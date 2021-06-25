@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre tu peso en otro planeta</title>
+</head>
+<body>
+    <h1>Descubre cuanto pesarás en otro planeta</h1>    
+
+    <script>
+        let usuarioPeso = prompt('Tu peso');
+        usuarioPeso = parseInt(usuarioPeso);
+        let planeta = parseInt(prompt("Elige un planeta\n 1 es Marte y 2 es Jupiter"));
+        const gravedad_tierra = 9.8;
+        const gravedad_marte = 3.7;
+        const gravedad_jupiter = 24.8;
+        let peso_final; 
+        if(planeta == 1){
+            peso_final = usuarioPeso * gravedad_marte / gravedad_tierra;
+            planeta = "Marte";
+        } else if (planeta == 2){
+            peso_final = usuarioPeso * gravedad_jupiter / gravedad_tierra;
+            planeta = "Jupiter";
+        }
+        else{//Para castigarlos
+            planeta = "tu imaginación";
+            peso_final = 1000000;
+        } 
+        
+        peso_final = parseInt(peso_final);
+        document.write(`Tu peso en ${planeta} es de <strong>${peso_final} kg <strong>`);
+    </script>    
+</body>
+</html>
