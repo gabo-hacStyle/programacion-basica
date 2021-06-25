@@ -5,13 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dibujando con el canvas</title>
+    <style>
+    body > h1{
+        text-align: center;
+        margin: 23px;
+        color: red;
+    }
+    body{
+        font-family: sans-serif;
+    }
+    #text{
+        box-shadow: 0px 0px 3px -1px black;
+        width: 85%;
+        padding: 13px;
+        margin: 20px auto;
+        background-color: #ffffffce;
+    }
+    #text h1{
+        color: #fe000095;
+    }
+    #second-section{
+        border-top: 1px dashed grey;
+        margin-top: 10px;
+    }
+    .dibujos{
+        align-items: center;
+        display: flex;
+    }
+    .dibujos span{
+        margin: 32px;
+        opacity: 0.65;
+    }
+    </style>
 </head>
 <body>
     <h1>Dibujando en Canvas</h1>
-    <p>Ya qué sabemos lo que es el DOM y como manipularlo como objeto, vamos 
-        a hacer un dibujo usando la etiqueta "canvas" de Html. Es decir, vamos a dibujar dentro del DOM.
-    </p>
-    <canvas id="dibujito" width="300" height="300"></canvas>
+    <div id="text">
+        <p>Ya qué sabemos lo que es el DOM y como manipularlo como objeto, vamos 
+            a hacer un dibujo usando la etiqueta "canvas" de Html. Es decir, vamos a dibujar dentro del DOM.
+        </p>
+        <h1>Maneras diferentes para aplicar el manejo del DOM y los dibujos</h1>
+        <div id="first-section">
+            <h2>Manera sencilla</h2>
+            <p>
+                Tenemos la primera y más simple forma de aplicar lo aprendido. Un dibujo, sea complejo o
+                llamativamente simple (como el siguiente) puede hacerse al manipular las propiedades que 
+                tenemos en el elemento canvas. Se pueden hacer dibujos 3d o 2d y meter lineas adentro de una 
+                manera particular para plasmar nuestras más crativas creaciones.  
+            </p>
+            <div class="dibujos">
+                <canvas id="dibujito" width="300" height="300"></canvas>
+                <span>Este dibujo, aunque no lo parezca, está solamente creado con lineas rectas. 
+                    Estas lineas rectas fueron dibujadas por una función en JavaScript y un ciclo 
+                    en el que cada linea se multiplica y todas estas se distribuyen a travez del canvas </span>
+            </div>
+        </div>
+        <div id="second-section">
+            <h2>Interactividad</h2>
+            <p> Sí queremos interactividad, es decir, que el usuario determine el color y 
+                la posicion de las lineas, esto también es posible. Vamos a aumentar el codigo en 
+                JavaScript, añadir botones e inputs para que el usuario pueda decirle al codigo que es
+                lo que quiere y personalizar sus dibujos de una manera instantanea.
+            </p>
+            <canvas id="interactivo" width="300" height="300"></canvas>
+        </div>
+    </div>
     <script src="dibujo.js"></script>
 </body>
 </html>
