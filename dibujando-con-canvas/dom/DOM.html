@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        h1{
+            text-align: center;
+            margin: 23px;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        #text{
+            box-shadow: 0px 0px 8px -8px black;
+            width: 85%;
+            padding: 7px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jugando con el DOM</h1>
+    <div id="text">
+        <p>
+            Resulta que dentro del navegador existen objetos importantes que tu puedes
+            manipular a travez de Java Script.
+            <ul>
+                <li>Navigator: <strong>Navigator</strong> es simplemente
+                todo el navegador, y con este puedes manipular cosas del propio navegador e incluso del Sistema Operativo</li>
+                <li>Window: <strong>Window</strong> es cada una de las ventanas o "tabs" que se encuentran abiertas en el navegador,
+                por ejemplo ahí tienes la URL.</li>
+                <li>Document: <strong>Document</strong> es todo el documento en HTML de la página que estás 
+                construyendo. Ahí se encuentran todo el arbol de elementos HTML.</li>
+            </ul>
+    
+            Un objeto puede tener <strong>métodos</strong> y <strong>atributos o valores</strong>. Los
+            métodos son las funciones que tiene el objeto. Ej: document.write(); <br> Write es una función 
+            que va a coger el valor que tu colocaste detro del parentesis y lo va a escribir dentro del 
+            objeto documento,  es decir, dentro del HTML. <br> Los atrubutos son valores, características del 
+            objeto, no son ejecutables como las funciones (metodos). Ej: window.location. El valor que te 
+            devuelve es la URL de la ventana en la que te encuentres, ya es un valor guardado en memoria, no una función.
+        </p>
+        <p>
+            Cuando quieres depurar un codigo, tienes la opcion de usar la console. <strong>Depurar</strong> es 
+            el proceso de tratar de arreglar un error en el codigo. 
+            <blockquote>console.log("Vamos a arreglar un error");</blockquote>
+            Se puede usar porque solo los desarrolladores a travez de la consola del navegador pueden ver 
+            ese mensaje. <br> Tambien se usa para mirar objetos junto con sus metodos y atributos.
+            <blockquote>console.log(window.location);</blockquote>
+            Esto te abrirá el objeto window.location dentro de la consola y podrás ver todo lo que necesitas. 
+            Esto crea algo curioso, puesto que tambien puedes ver el objeto 'console' y el metodo 'console.log()' desde 
+            la consola.
+        </p>
+    </div>
+    <script src="./codigo.js"></script>
+</body>
+</html>
