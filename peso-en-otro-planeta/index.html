@@ -10,26 +10,37 @@
     <h1>Descubre cuanto pesarás en otro planeta</h1>    
 
     <script>
+        //Le preguntará a los usuarios su peso y el planeta en el cual quieren saber su peso.
+        //Estos valores se guardaran en variables: usuarioPeso y planeta
         let usuarioPeso = prompt('Tu peso');
-        usuarioPeso = parseInt(usuarioPeso);
+        usuarioPeso = parseInt(usuarioPeso); //usuarioPeso será redondeado al entero más cercano para evitar tener decimales.
         let planeta = parseInt(prompt("Elige un planeta\n 1 es Marte y 2 es Jupiter"));
+        //Gravedades en los 3 planetas, indispensables para realizar los cálculos.
         const gravedad_tierra = 9.8;
         const gravedad_marte = 3.7;
         const gravedad_jupiter = 24.8;
-        let peso_final; 
-        if(planeta == 1){
+        //Proceso para descubrir el peso
+        let peso_final; //Declarando la variable que se va a mostrar, pero no su valor todavía
+        //Lógica del codigo, sí eligió a Marte (1), se va a correr su codigo respectivo,
+        //Sí el usuario escogió Jupiter (2), se ejecutará el segundo bloque else if. 
+        if(planeta == 1){ //Marte
+            //Regla de tres. Peso multiplicado por la gravedad de Marte dividido la gravedad de la Tierra
+            //El resultado se guardará en la variable peso_final.
             peso_final = usuarioPeso * gravedad_marte / gravedad_tierra;
             planeta = "Marte";
-        } else if (planeta == 2){
+        } else if (planeta == 2){ //Jupiter
+            //Mísma lógica. Peso multiplicado por la gravedad de Jupiter dividido la gravedad de la Tierra
             peso_final = usuarioPeso * gravedad_jupiter / gravedad_tierra;
             planeta = "Jupiter";
         }
-        else{//Para castigarlos
+        else{//Sí no eligió ninguno de los dos valores que aceptabamos, pues lanzamos este valor para castigarlos.
             planeta = "tu imaginación";
             peso_final = 1000000;
         } 
-        
+        //Proceso final, 
+        //Convertimos el resultado del cálculo anterior a un numero entero
         peso_final = parseInt(peso_final);
+        //Y luego lo imprimimos en pantalla con las dos variables: planeta y peso_final 
         document.write(`Tu peso en ${planeta} es de <strong>${peso_final} kg <strong>`);
     </script>    
 </body>
