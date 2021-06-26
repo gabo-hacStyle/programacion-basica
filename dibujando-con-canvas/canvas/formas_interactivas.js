@@ -26,6 +26,7 @@ const lineMaker = (color, x_inicial, y_inicial, x_final, y_final) => {
 }
 const azul = '#AAF';
 const rojo = '#FAA';
+const verde = '#AFA';
 
 
 //Funciones especificas. 
@@ -46,7 +47,7 @@ const volteadoLineDrawer = () => {
     for(let i = 0; i < wantedLines; i++){
         //Lineas azules de abajo lado derecho
         lineMaker( azul, anchoCanvas, i* spaceLines, spaceLines * (wantedLines - i) , anchoCanvas);
-        //Lineas rojitas de arriba
+        //Lineas rojitas de arriba lado izquierdo
         lineMaker(rojo, 0, spaceLines * (wantedLines - i), i*spaceLines, 0);
     }
 };
@@ -54,10 +55,10 @@ const xboxLineDrawer = () => {
     const wantedLines = parseInt(texto_input.value);
     const spaceLines = anchoCanvas/wantedLines;
     for(let i = 0; i < wantedLines; i++){
-        //Lineas azules de abajo
-        lineMaker( azul, 0, i* spaceLines, spaceLines * (i + 1), anchoCanvas);
-        //Lineas rojitas de arriba, se invierten los valores
-        lineMaker(rojo, anchoCanvas, spaceLines * (i + 1), i*spaceLines, 0);
+        //Lineas rojitas de arriba lado derecho
+        lineMaker(verde, anchoCanvas, spaceLines * (i + 1), i*spaceLines, 0);
+        //Lineas rojitas de arriba lado izquierdo
+        lineMaker(verde, 0, spaceLines * (wantedLines - i), i*spaceLines, 0);
     }
 };
 const oblicuaLineDrawer = () => {
