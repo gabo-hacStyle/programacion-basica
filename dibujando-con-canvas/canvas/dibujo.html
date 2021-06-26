@@ -40,6 +40,9 @@
         margin: 45px;
         opacity: 0.75;
     }
+    .instructions #botoncito{
+        opacity: 1;
+    }
     </style>
 </head>
 <body>
@@ -61,12 +64,13 @@
                 <canvas id="dibujito" width="300" height="300"></canvas>
                 <span>Este dibujo, aunque no lo parezca, está solamente creado con lineas rectas. 
                     Estas lineas rectas fueron dibujadas por una función en JavaScript y un ciclo 
-                    en el que cada linea se multiplica y todas estas se distribuyen a travez del canvas </span>
+                    en el que cada linea se multiplica y todas estas se distribuyen a travez del canvas <br>
+                    Hay en total 30 lineas</span>
             </div>
         </div>
         <div id="second-section">
             <h2>Interactividad</h2>
-            <p> Sí queremos interactividad, es decir, que el usuario determine el color y 
+            <p> Sí queremos interactividad, es decir, que el usuario determine 
                 la posicion de las lineas, esto también es posible. Vamos a aumentar el codigo en 
                 JavaScript, añadir botones e inputs para que el usuario pueda decirle al codigo que es
                 lo que quiere y personalizar sus dibujos de una manera instantanea.
@@ -77,13 +81,42 @@
                         <p>
                             Escribe cuantas lineas quieres que aparezcan... y eso aparecerá.
                         </p>
-                            <input type="text" id="texto_lineas"> *máximo 30
+                       
+                            <input type="text" id="texto_lineas">
                             <input type="button" value="Click aquí" id="botoncito"> 
+                            <p id="action_to_reload"></p>
+                </div>
+            </div>
+        </div>
+        <div id="third-section">
+            <h2>Interactividad con dos variables</h2>
+            <p>Ya volvimos a recrear nuestro propio dibujo pidiendole al usuario las lineas que 
+                deseaba ver. Ahora vamos a hacer que el usuario elija una manera diferente de mostrar las lineas
+                y la cantidada de las mismas añadiendo mayor capacidad de interactividad.
+            </p>
+            <div class="dibujos">
+                <canvas id="formas_interactivas" width="300" height="300"></canvas>
+                <div class="instructions">
+                    <p>
+                        <span>
+                            Lo mismo del anterior, cuántas lineas quieres. De esta manera se interactua con
+                            dos variables
+                        </span> <br>
+                        <input type="text" placeholder="Lineas que quieres ver" id="texto_lineas_formas">    
+                    </p>
+                    <span>
+                        En que forma te gustaría ver el dibujo? <br>
+                    </span>
+                    <input type="button" value="Normal" id="normal_dibujo">
+                    <input type="button" value="Volteado" id="volteado_dibujo">
+                    <input type="button" value="XBOX logo" id="xbox_dibujo">
+                    <input type="button" value="X oblicua" id="x-oblicua_dibujo"> 
                 </div>
             </div>
         </div>
     </div>
     <script src="dibujo.js"></script>
     <script src="dibujo_interactivo.js"></script>
+    <script src="formas_interactivas.js"></script>
 </body>
 </html>
