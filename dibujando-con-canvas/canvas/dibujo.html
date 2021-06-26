@@ -36,6 +36,10 @@
         margin: 32px;
         opacity: 0.65;
     }
+    .dibujos .instructions{
+        margin: 45px;
+        opacity: 0.75;
+    }
     </style>
 </head>
 <body>
@@ -67,9 +71,19 @@
                 JavaScript, añadir botones e inputs para que el usuario pueda decirle al codigo que es
                 lo que quiere y personalizar sus dibujos de una manera instantanea.
             </p>
-            <canvas id="interactivo" width="300" height="300"></canvas>
+            <div class="dibujos">
+                <canvas id="interactivo" width="300" height="300"></canvas>
+                <div class="instructions">
+                        <p>
+                            Escribe cuantas lineas quieres que aparezcan... y eso aparecerá.
+                        </p>
+                            <input type="text" id="texto_lineas"> *máximo 30
+                            <input type="button" value="Click aquí" id="botoncito"> 
+                </div>
+            </div>
         </div>
     </div>
     <script src="dibujo.js"></script>
+    <script src="dibujo_interactivo.js"></script>
 </body>
 </html>
