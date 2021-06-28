@@ -24,16 +24,18 @@
     #text h1{
         color: #fe000095;
     }
-    #second-section{
+    div#text > div{
         border-top: 1px dashed grey;
         margin-top: 10px;
+    }
+    div#first-section{
+        border: 0!important;
     }
     .dibujos{
         align-items: center;
         display: flex;
     }
     .dibujos span{
-        margin: 32px;
         opacity: 0.65;
     }
     .dibujos .instructions{
@@ -42,6 +44,9 @@
     }
     .instructions #botoncito{
         opacity: 1;
+    }
+    input{
+        margin-top: 15px;
     }
     </style>
 </head>
@@ -92,7 +97,7 @@
             <h2>Interactividad con dos variables</h2>
             <p>Ya volvimos a recrear nuestro propio dibujo pidiendole al usuario las lineas que 
                 deseaba ver. Ahora vamos a hacer que el usuario elija una manera diferente de mostrar las lineas
-                y la cantidada de las mismas añadiendo mayor capacidad de interactividad.
+                y la cantidad de las mismas añadiendo mayor capacidad de interactividad.
             </p>
             <div class="dibujos">
                 <canvas id="formas_interactivas" width="300" height="300"></canvas>
@@ -104,13 +109,15 @@
                         </span> <br>
                         <input type="text" placeholder="Lineas que quieres ver" id="texto_lineas_formas">    
                     </p>
-                    <span>
-                        En que forma te gustaría ver el dibujo? <br>
-                    </span>
-                    <input type="button" value="Normal" id="normal_dibujo">
-                    <input type="button" value="Volteado" id="volteado_dibujo">
-                    <input type="button" value="XBOX logo" id="xbox_dibujo">
-                    <input type="button" value="X oblicua" id="x-oblicua_dibujo"> 
+                    <p>
+                        <span>
+                            En que forma te gustaría ver el dibujo? <br>
+                        </span>
+                        <input type="button" value="Normal" id="normal_dibujo">
+                        <input type="button" value="Volteado" id="volteado_dibujo">
+                        <input type="button" value="XBOX logo" id="xbox_dibujo">
+                        <input type="button" value="Curva Parabolica" id="parabolica_dibujo"> 
+                    </p>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
 const normal = document.getElementById('normal_dibujo');
 const volteado = document.getElementById('volteado_dibujo');
 const xbox = document.getElementById('xbox_dibujo');
-const oblicua = document.getElementById('x-oblicua_dibujo');
+const parabola = document.getElementById('parabolica_dibujo');
 
 //Input de lineas que quiere el usuario
 const texto_input = document.getElementById('texto_lineas_formas');
@@ -61,15 +61,26 @@ const xboxLineDrawer = () => {
         lineMaker(verde, 0, spaceLines * (wantedLines - i), i*spaceLines, 0);
     }
 };
-const oblicuaLineDrawer = () => {
+const parabolaLineDrawer = () => {
     const wantedLines = parseInt(texto_input.value);
-    const spaceLines = anchoCanvas/wantedLines;
-    for(let i = 0; i < wantedLines; i++){
-        //Lineas azules de abajo
-        lineMaker( azul, 0, i* spaceLines, spaceLines * (i + 1), anchoCanvas);
-        //Lineas rojitas de arriba, se invierten los valores
-        lineMaker(rojo, anchoCanvas, spaceLines * (i + 1), i*spaceLines, 0);
-    }
+    const linesPerSquare = wantedLines/2;
+    const squareWidth = anchoCanvas/2;
+    const spaceLines = squareWidth/linesPerSquare;
+    //Linea base estática horizontal
+    lineMaker(rojo, 0, squareWidth, anchoCanvas, squareWidth);
+    //Linea base estática vertical
+    lineMaker(azul, squareWidth, 0, squareWidth, anchoCanvas);
+
+    for(let i = 0; i < linesPerSquare; i++){
+        //Parte superior izquierda
+        lineMaker(rojo, squareWidth, i * spaceLines, spaceLines * (linesPerSquare - i), squareWidth);
+        //Parte inferior izquierda 
+        lineMaker(rojo, squareWidth, squareWidth + (spaceLines * (linesPerSquare - i)), spaceLines * (linesPerSquare - i), squareWidth);
+        //Parte superior derecha
+        lineMaker(azul, squareWidth, i * spaceLines, squareWidth + (i * spaceLines), squareWidth);
+        //Parte inferior derecha
+        lineMaker(azul, squareWidth, squareWidth + (spaceLines * (linesPerSquare - i)), squareWidth + (i * spaceLines), squareWidth);
+    }   
 };
 
 
@@ -77,4 +88,4 @@ const oblicuaLineDrawer = () => {
 normal.addEventListener('click', normalLineDrawer);
 volteado.addEventListener('click', volteadoLineDrawer);
 xbox.addEventListener('click', xboxLineDrawer);
-oblicua.addEventListener('click', oblicuaLineDrawer);
+parabola.addEventListener('click', parabolaLineDrawer);
