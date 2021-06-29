@@ -48,6 +48,8 @@ const normalDibujador = () => {
         //Lineas rojitas de arriba, se invierten los valores
         /** 300 | 10 * (i+1)| i*10 | 0 
          * x1  y1  x2  y2
+         * 300 20  10  0
+         * 300 30  20  0
          */
         haceLineas(rojo, altoCanvas, espacio * (i + 1), i*espacio, 0);
     }
@@ -57,8 +59,18 @@ const volteadoDibujador = () => {
     const espacio = anchoCanvas/lineas;
     for(let i = 0; i < lineas; i++){
         //Lineas azules de abajo lado derecho
+        /** 300 | 10 * i | 10 * (30 - i) | 300
+         * x1  y1  x2  y2
+         * 300 10 290 300
+         * 300 20 280 300
+         */
         haceLineas( azul, anchoCanvas, i* espacio, espacio * (lineas - i) , altoCanvas);
         //Lineas rojitas de arriba lado izquierdo
+        /** 0 | 10 * (30 - i)| i* 10 | 0
+         * x1  y1  x2  y2
+         * 0  290  10  0
+         * 0  280  20  0
+         */
         haceLineas(rojo, 0, espacio * (lineas - i), i*espacio, 0);
     }
 };
@@ -67,8 +79,18 @@ const xboxDibujador = () => {
     const espacio = anchoCanvas/lineas;
     for(let i = 0; i < lineas; i++){
         //Lineas rojitas de arriba lado derecho
+        /** 300 | 10 * (i + 1) | i * 10 | 0
+         * x1  y1  x2  y2
+         * 300 20  10  0
+         * 300 30  20  0
+         */
         haceLineas(verde, altoCanvas, espacio * (i + 1), i*espacio, 0);
         //Lineas rojitas de arriba lado izquierdo
+        /** 0 | 10 * (30 - i) | i * 10 | 0
+         * x1  y1  x2  y2
+         * 0  290  10  0
+         * 0  280  20   0
+         */
         haceLineas(verde, 0, espacio * (lineas - i), i*espacio, 0);
     }
 };

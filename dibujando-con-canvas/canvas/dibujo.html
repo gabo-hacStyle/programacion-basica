@@ -16,8 +16,8 @@
     }
     #text{
         box-shadow: 0px 0px 3px -1px black;
-        width: 85%;
-        padding: 13px;
+        width: 70%;
+        padding: 29px;
         margin: 20px auto;
         background-color: #ffffffce;
     }
@@ -67,10 +67,12 @@
             </p>
             <div class="dibujos">
                 <canvas id="dibujito" width="300" height="300"></canvas>
-                <span>Este dibujo, aunque no lo parezca, está solamente creado con lineas rectas. 
-                    Estas lineas rectas fueron dibujadas por una función en JavaScript y un ciclo 
-                    en el que cada linea se multiplica y todas estas se distribuyen a travez del canvas <br>
-                    Hay en total 30 lineas</span>
+                <div class="instructions">
+                    <span>Este dibujo, aunque no lo parezca, está solamente creado con lineas rectas. 
+                        Estas lineas rectas fueron dibujadas por una función en JavaScript y un ciclo 
+                        en el que cada linea se multiplica y todas estas se distribuyen a travez del canvas <br>
+                        Hay en total 30 lineas</span>
+                </div>
             </div>
         </div>
         <div id="second-section">
@@ -121,9 +123,26 @@
                 </div>
             </div>
         </div>
+        <div id="fourth-section">
+            <h2>Añadiendo eventos del teclado</h2>
+            <p>
+                Lo que vamos a hacer ahora es manipular el canvas desde el teclado. Vamos a hacer que el usuario por medio de 
+                las flechas pueda crear un dibujo, empezando desde el centro. 
+            </p>
+            <div class="dibujos">
+                <canvas id="flechas" height="300" width="300"></canvas>
+                <div class="instructions">
+                    <p>
+                        <span>Mueve las flechas del teclado para dibujar algo</span>
+                    </p>
+                    <input type="text" placeholder="NI idea">
+                </div>
+            </div> 
+        </div>
     </div>
     <script src="dibujo.js"></script>
     <script src="dibujo_interactivo.js"></script>
     <script src="formas_interactivas.js"></script>
+    <script src="flechas.js"></script>
 </body>
 </html>
