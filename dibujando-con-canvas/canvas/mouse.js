@@ -67,6 +67,7 @@ const mouseOprimido = (evento) => {
             lineDoer(rojito, x_start, y_start, x_start, y_start + size, plantilla);
             y_start = y_start + size;      
     }
+
 }
 
 //Cuando el mouse sea accionado, ejecutará la función de ejecutar las lineas
