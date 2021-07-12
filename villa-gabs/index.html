@@ -7,14 +7,21 @@
 </head>
 <body>
     <h1>Bienvenidos a Villa Gabs</h1>
-    
-    <canvas width="500" height="500" id="villa-canvas"></canvas>
-    <div class="images" style="display: none">
-        <img src="./tile.png" alt="tile" id="fondo">
-        <img src="./cerdo.png" alt="cerdo" id="cerdito">
-        <img src="./gallina.png" alt="gallina" id="pollo">
-        <img src="vaca.png" alt="vaca" id="vaquita">
+    <div class="container" style="display: flex;">
+        <canvas width="500" height="500" id="villa-canvas"></canvas>
+        <div class="description">
+            <div id="vaca">
+                <div id="vacas"><p></p></div>
+            </div>
+            <div id="cerdo">
+                <div id="cerdos"><p></p></div>
+            </div>
+            <div id="pollo">
+                <div id="pollos"><p></p></div>
+            </div>
+        </div>
     </div>
+    
     <script src="villa.js"></script>
     
 
